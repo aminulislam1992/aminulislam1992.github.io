@@ -3,10 +3,647 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aminul Islam</title>
+    <title>Your Name — Materials Science & ML Researcher</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #2c2c2c;
+            background: #fafafa;
+            line-height: 1.7;
+        }
+
+        a { color: #1a5276; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* --- Header / Hero --- */
+        .header {
+            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 50%, #1a5276 100%);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .header-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+            background: #4a6a7a;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .header .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 6px;
+        }
+
+        .header .affiliation {
+            font-size: 0.95em;
+            opacity: 0.75;
+            font-style: italic;
+        }
+
+        .header-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header-links a {
+            color: #fff;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 0.3px;
+            transition: background 0.2s;
+        }
+
+        .header-links a:hover {
+            background: rgba(255,255,255,0.28);
+            text-decoration: none;
+        }
+
+        /* --- Navigation --- */
+        .nav {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav ul {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            display: block;
+            padding: 14px 16px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85em;
+            color: #555;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover { color: #1a5276; text-decoration: none; }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        section:last-child { border-bottom: none; }
+
+        h2 {
+            font-size: 1.5em;
+            color: #1a2a3a;
+            margin-bottom: 24px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1a5276;
+            display: inline-block;
+        }
+
+        /* --- About --- */
+        .about p {
+            margin-bottom: 14px;
+            text-align: justify;
+        }
+
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .tag {
+            background: #e8f0f7;
+            color: #1a5276;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.82em;
+        }
+
+        /* --- Featured Projects --- */
+        .project-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 16px;
+            transition: box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .project-card h3 {
+            font-size: 1.15em;
+            color: #1a2a3a;
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.82em;
+            background: #f0f4f8;
+            padding: 4px 12px;
+            border-radius: 4px;
+            color: #1a5276;
+        }
+
+        /* --- Publications --- */
+        .pub-item {
+            margin-bottom: 22px;
+            padding-left: 18px;
+            border-left: 3px solid #d0dce5;
+        }
+
+        .pub-item .pub-title {
+            font-weight: 700;
+            color: #1a2a3a;
+            margin-bottom: 3px;
+        }
+
+        .pub-item .pub-authors {
+            font-size: 0.92em;
+            color: #555;
+        }
+
+        .pub-item .pub-venue {
+            font-size: 0.88em;
+            color: #777;
+            font-style: italic;
+            margin-top: 2px;
+        }
+
+        .pub-item .pub-links {
+            margin-top: 6px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .pub-item .pub-links a {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8em;
+            background: #f0f4f8;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .pub-year {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #1a5276;
+            margin: 28px 0 14px 0;
+        }
+
+        .pub-year:first-child { margin-top: 0; }
+
+        /* --- Software / Repos --- */
+        .repo-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .repo-card h3 {
+            font-size: 1.05em;
+            color: #1a5276;
+            font-family: 'Courier New', monospace;
+        }
+
+        .repo-card p {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 4px;
+        }
+
+        .repo-card .repo-meta {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8em;
+            color: #888;
+            white-space: nowrap;
+        }
+
+        /* --- CV --- */
+        .cv-section p {
+            margin-bottom: 16px;
+        }
+
+        .cv-download {
+            display: inline-block;
+            background: #1a5276;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+            transition: background 0.2s;
+        }
+
+        .cv-download:hover {
+            background: #1a3a5a;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* --- Contact --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .contact-item {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 18px;
+        }
+
+        .contact-item .label {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .contact-item .value {
+            font-size: 0.95em;
+            color: #1a5276;
+        }
+
+        /* --- News --- */
+        .news-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            align-items: baseline;
+        }
+
+        .news-date {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            color: #888;
+            white-space: nowrap;
+            min-width: 90px;
+        }
+
+        .news-text {
+            font-size: 0.95em;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8em;
+            color: #999;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .header { padding: 40px 20px; }
+            .header h1 { font-size: 1.7em; }
+            .nav a { padding: 10px 10px; font-size: 0.78em; }
+            section { padding: 35px 0; }
+            .news-item { flex-direction: column; gap: 2px; }
+            .news-date { min-width: auto; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to my website!</h1>
-    <p>This site is under construction. Stay tuned!</p>
+
+<!-- ===================== HEADER ===================== -->
+<div class="header">
+    <div class="header-inner">
+        <div class="profile-photo">👤</div>
+        <!-- EDIT: Replace with <img src="photo.jpg" class="profile-photo" alt="Your Name"> -->
+        <h1>Your Name</h1>
+        <!-- EDIT: Your name above -->
+        <div class="subtitle">PhD Candidate / Postdoc / Assistant Professor</div>
+        <!-- EDIT: Your title above -->
+        <div class="affiliation">Department of Materials Science &amp; Engineering, Your University</div>
+        <!-- EDIT: Your affiliation above -->
+        <div class="header-links">
+            <a href="mailto:you@university.edu">✉ Email</a>
+            <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">🎓 Google Scholar</a>
+            <a href="https://github.com/aminulislam1992" target="_blank">💻 GitHub</a>
+            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">🆔 ORCID</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">🔗 LinkedIn</a>
+        </div>
+        <!-- EDIT: Replace all links above with your actual profile URLs -->
+    </div>
+</div>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav class="nav">
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#software">Software</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+        <!-- EDIT: Write 2-3 sentences about yourself -->
+        I am a [title] at [University/Lab], working at the intersection of materials science and machine learning.
+        My research focuses on developing data-driven approaches to accelerate the discovery and design of advanced materials.
+    </p>
+    <p>
+        <!-- EDIT: Add more detail about your research focus -->
+        I am particularly interested in applying deep learning, graph neural networks, and generative models
+        to predict material properties, explore vast compositional spaces, and guide experimental synthesis.
+        My goal is to bridge the gap between computational predictions and experimental validation.
+    </p>
+
+    <h3 style="font-size: 1em; margin-top: 24px; margin-bottom: 12px; color: #555;">Research Interests</h3>
+    <div class="research-interests">
+        <!-- EDIT: Change these tags to match your interests -->
+        <span class="tag">Machine Learning for Materials</span>
+        <span class="tag">Materials Informatics</span>
+        <span class="tag">Graph Neural Networks</span>
+        <span class="tag">Crystal Structure Prediction</span>
+        <span class="tag">High-Throughput Screening</span>
+        <span class="tag">DFT</span>
+        <span class="tag">Generative Models</span>
+        <span class="tag">Materials Discovery</span>
+    </div>
+</section>
+
+<!-- ===================== NEWS ===================== -->
+<section id="news">
+    <h2>News</h2>
+    <!-- EDIT: Add your latest updates -->
+    <div class="news-item">
+        <span class="news-date">Oct 2026</span>
+        <span class="news-text">Our paper on [topic] was accepted at <strong>[Journal/Conference]</strong>!</span>
+    </div>
+    <div class="news-item">
+        <span class="news-date">Sep 2026</span>
+        <span class="news-text">Presented a talk on [topic] at [Conference Name].</span>
+    </div>
+    <div class="news-item">
+        <span class="news-date">Jun 2026</span>
+        <span class="news-text">Released <a href="#">[tool/dataset name]</a> — an open-source tool for [purpose].</span>
+    </div>
+    <div class="news-item">
+        <span class="news-date">Jan 2026</span>
+        <span class="news-text">Started my [position] at [University/Lab].</span>
+    </div>
+</section>
+
+<!-- ===================== FEATURED RESEARCH ===================== -->
+<section id="research">
+    <h2>Featured Research</h2>
+
+    <!-- EDIT: Replace with your actual projects -->
+    <div class="project-card">
+        <h3>ML-Guided Discovery of Novel Thermoelectric Materials</h3>
+        <p>
+            Developed a graph neural network model to predict thermoelectric figure of merit (ZT)
+            across thousands of candidate compositions. Identified 12 promising materials,
+            3 of which were experimentally validated with ZT &gt; 1.5.
+        </p>
+        <div class="project-links">
+            <a href="#">📄 Paper</a>
+            <a href="#">💻 Code</a>
+            <a href="#">📊 Dataset</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <h3>Generative Models for Crystal Structure Prediction</h3>
+        <p>
+            Applied variational autoencoders and diffusion models to generate
+            novel crystal structures with targeted properties. The model achieves
+            state-of-the-art performance on the Materials Project benchmark.
+        </p>
+        <div class="project-links">
+            <a href="#">📄 Paper</a>
+            <a href="#">💻 Code</a>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <h3>Transfer Learning for Small Materials Datasets</h3>
+        <p>
+            Proposed a transfer learning framework that pre-trains on large DFT datasets
+            and fine-tunes on small experimental datasets, improving prediction accuracy
+            by 40% on band gap estimation tasks.
+        </p>
+        <div class="project-links">
+            <a href="#">📄 Preprint</a>
+            <a href="#">💻 Code</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PUBLICATIONS ===================== -->
+<section id="publications">
+    <h2>Publications</h2>
+
+    <!-- EDIT: Replace with your real publications -->
+    <div class="pub-year">2026</div>
+
+    <div class="pub-item">
+        <div class="pub-title">Title of Your Most Recent Paper</div>
+        <div class="pub-authors"><strong>Your Name</strong>, Coauthor A, Coauthor B, Coauthor C</div>
+        <div class="pub-venue">Nature Computational Science, 2026</div>
+        <div class="pub-links">
+            <a href="#">DOI</a>
+            <a href="#">arXiv</a>
+            <a href="#">Code</a>
+        </div>
+    </div>
+
+    <div class="pub-item">
+        <div class="pub-title">Another Paper Title Goes Here</div>
+        <div class="pub-authors">Coauthor A, <strong>Your Name</strong>, Coauthor B</div>
+        <div class="pub-venue">Chemistry of Materials, 2026</div>
+        <div class="pub-links">
+            <a href="#">DOI</a>
+            <a href="#">PDF</a>
+        </div>
+    </div>
+
+    <div class="pub-year">2025</div>
+
+    <div class="pub-item">
+        <div class="pub-title">An Older Paper Title</div>
+        <div class="pub-authors"><strong>Your Name</strong>, Coauthor D, Coauthor E</div>
+        <div class="pub-venue">npj Computational Materials, 2025</div>
+        <div class="pub-links">
+            <a href="#">DOI</a>
+            <a href="#">arXiv</a>
+            <a href="#">Code</a>
+            <a href="#">Dataset</a>
+        </div>
+    </div>
+
+    <div class="pub-item">
+        <div class="pub-title">Yet Another Paper Title</div>
+        <div class="pub-authors">Coauthor F, <strong>Your Name</strong>, Coauthor G</div>
+        <div class="pub-venue">Physical Review Materials, 2025</div>
+        <div class="pub-links">
+            <a href="#">DOI</a>
+        </div>
+    </div>
+
+    <p style="margin-top: 24px; font-size: 0.9em; color: #777;">
+        → Full list on <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
+        <!-- EDIT: Add your Google Scholar link -->
+    </p>
+</section>
+
+<!-- ===================== SOFTWARE ===================== -->
+<section id="software">
+    <h2>Software &amp; Datasets</h2>
+
+    <!-- EDIT: Replace with your actual repos -->
+    <div class="repo-card">
+        <div>
+            <h3><a href="https://github.com/aminulislam1992/your-repo">your-repo-name</a></h3>
+            <p>A brief description of what this tool does — e.g., "Graph neural network for predicting formation energies of inorganic crystals."</p>
+        </div>
+        <div class="repo-meta">Python</div>
+    </div>
+
+    <div class="repo-card">
+        <div>
+            <h3><a href="https://github.com/aminulislam1992/another-repo">another-repo-name</a></h3>
+            <p>Another tool description — e.g., "Dataset and benchmarks for ML-driven thermoelectric screening."</p>
+        </div>
+        <div class="repo-meta">Python</div>
+    </div>
+
+    <div class="repo-card">
+        <div>
+            <h3><a href="https://github.com/aminulislam1992/third-repo">third-repo-name</a></h3>
+            <p>A third tool — e.g., "Automated DFT workflow for high-throughput materials calculations."</p>
+        </div>
+        <div class="repo-meta">Python</div>
+    </div>
+</section>
+
+<!-- ===================== CV ===================== -->
+<section id="cv" class="cv-section">
+    <h2>Curriculum Vitae</h2>
+    <p>
+        A summary of my academic background, research experience, and teaching.
+    </p>
+    <!-- EDIT: Upload your CV as a PDF and update the link below -->
+    <a href="cv.pdf" class="cv-download" target="_blank">📄 Download CV (PDF)</a>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+        <div class="contact-item">
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:you@university.edu">you@university.edu</a></div>
+            <!-- EDIT: Your email -->
+        </div>
+        <div class="contact-item">
+            <div class="label">Office</div>
+            <div class="value">Room 123, Materials Science Building<br>Your University</div>
+            <!-- EDIT: Your office location -->
+        </div>
+        <div class="contact-item">
+            <div class="label">Google Scholar</div>
+            <div class="value"><a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Profile</a></div>
+            <!-- EDIT: Your Scholar URL -->
+        </div>
+        <div class="contact-item">
+            <div class="label">GitHub</div>
+            <div class="value"><a href="https://github.com/aminulislam1992" target="_blank">aminulislam1992</a></div>
+        </div>
+    </div>
+</section>
+
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<div class="footer">
+    &copy; 2026 Your Name. Hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    <!-- EDIT: Your name above -->
+</div>
+
 </body>
 </html>
