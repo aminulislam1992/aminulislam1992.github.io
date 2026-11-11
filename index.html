@@ -3,647 +3,833 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name — Materials Science & ML Researcher</title>
+    <title>Md. Aminul Islam — Materials Science & ML Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            color: #2c2c2c;
-            background: #fafafa;
-            line-height: 1.7;
+            font-family: 'Lora', Georgia, serif;
+            color: #2a2a2a;
+            background: #f8f7f4;
+            line-height: 1.72;
+            -webkit-font-smoothing: antialiased;
         }
 
-        a { color: #1a5276; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        a { color: #8b1a1a; text-decoration: none; transition: color 0.2s; }
+        a:hover { color: #5c1010; text-decoration: underline; }
 
-        /* --- Header / Hero --- */
+        .sans {
+            font-family: 'Inter', -apple-system, Helvetica Neue, Arial, sans-serif;
+        }
+
+        /* ── Header ── */
         .header {
-            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 50%, #1a5276 100%);
-            color: #fff;
-            padding: 60px 20px;
+            background: linear-gradient(160deg, #1b1b2f 0%, #2a1f3d 40%, #3b2d55 100%);
+            color: #f0ece4;
+            padding: 64px 24px 56px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .header-inner {
-            max-width: 800px;
-            margin: 0 auto;
+        .header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");
+            pointer-events: none;
         }
 
-        .profile-photo {
-            width: 150px;
-            height: 150px;
+        .header-inner { max-width: 720px; margin: 0 auto; position: relative; }
+
+        .avatar {
+            width: 130px; height: 130px;
             border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.3);
-            margin-bottom: 20px;
-            background: #4a6a7a;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: rgba(255,255,255,0.6);
+            border: 3px solid rgba(255,255,255,0.2);
+            margin: 0 auto 22px;
+            background: rgba(255,255,255,0.08);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 50px; color: rgba(255,255,255,0.45);
         }
+        /* Replace the div.avatar with: <img src="photo.jpg" class="avatar" alt="Md. Aminul Islam" style="object-fit:cover;"> */
 
         .header h1 {
-            font-size: 2.2em;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 2.3em; font-weight: 600;
+            letter-spacing: 0.4px; margin-bottom: 8px;
         }
 
-        .header .subtitle {
-            font-size: 1.1em;
-            opacity: 0.9;
-            margin-bottom: 6px;
+        .header .role {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.98em; opacity: 0.88;
+            font-weight: 500; margin-bottom: 4px;
         }
 
-        .header .affiliation {
-            font-size: 0.95em;
-            opacity: 0.75;
-            font-style: italic;
+        .header .affil {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.86em; opacity: 0.62;
         }
 
-        .header-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+        .hdr-links {
+            margin-top: 24px;
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
         }
 
-        .header-links a {
-            color: #fff;
-            background: rgba(255,255,255,0.15);
-            padding: 8px 18px;
-            border-radius: 6px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.85em;
+        .hdr-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8em; font-weight: 500;
+            color: #f0ece4;
+            background: rgba(255,255,255,0.1);
+            padding: 7px 16px; border-radius: 5px;
             letter-spacing: 0.3px;
             transition: background 0.2s;
         }
 
-        .header-links a:hover {
-            background: rgba(255,255,255,0.28);
-            text-decoration: none;
-        }
+        .hdr-links a:hover { background: rgba(255,255,255,0.22); text-decoration: none; }
 
-        /* --- Navigation --- */
+        /* ── Nav ── */
         .nav {
-            background: #fff;
-            border-bottom: 1px solid #e0e0e0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            font-family: 'Inter', sans-serif;
+            background: #fff; border-bottom: 1px solid #e4e0d8;
+            position: sticky; top: 0; z-index: 100;
         }
 
         .nav ul {
-            max-width: 800px;
-            margin: 0 auto;
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            padding: 0 20px;
-            flex-wrap: wrap;
+            max-width: 820px; margin: 0 auto;
+            list-style: none; display: flex;
+            justify-content: center; flex-wrap: wrap; gap: 4px;
+            padding: 0 16px;
         }
 
         .nav a {
-            display: block;
-            padding: 14px 16px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.85em;
-            color: #555;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: color 0.2s;
+            display: block; padding: 13px 13px;
+            font-size: 0.78em; font-weight: 500;
+            color: #666; text-transform: uppercase;
+            letter-spacing: 0.6px; transition: color 0.2s;
         }
 
-        .nav a:hover { color: #1a5276; text-decoration: none; }
+        .nav a:hover { color: #8b1a1a; text-decoration: none; }
 
-        /* --- Main Content --- */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        /* ── Container ── */
+        .wrap { max-width: 800px; margin: 0 auto; padding: 0 24px; }
 
-        section {
-            padding: 50px 0;
-            border-bottom: 1px solid #e8e8e8;
-        }
-
-        section:last-child { border-bottom: none; }
+        section { padding: 52px 0; border-bottom: 1px solid #e4e0d8; }
+        section:last-of-type { border-bottom: none; }
 
         h2 {
-            font-size: 1.5em;
-            color: #1a2a3a;
-            margin-bottom: 24px;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 1.45em; font-weight: 600;
+            color: #1b1b2f; margin-bottom: 26px;
             padding-bottom: 8px;
-            border-bottom: 2px solid #1a5276;
+            border-bottom: 2px solid #8b1a1a;
             display: inline-block;
         }
 
-        /* --- About --- */
-        .about p {
-            margin-bottom: 14px;
-            text-align: justify;
-        }
+        h3 { font-family: 'Inter', sans-serif; }
 
-        .research-interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 16px;
+        /* ── About ── */
+        .about p { margin-bottom: 14px; text-align: justify; }
+
+        .interests {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px;
         }
 
         .tag {
-            background: #e8f0f7;
-            color: #1a5276;
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.82em;
+            font-family: 'Inter', sans-serif;
+            background: #eee8dc; color: #5a3e20;
+            padding: 5px 14px; border-radius: 20px;
+            font-size: 0.78em; font-weight: 500;
         }
 
-        /* --- Featured Projects --- */
-        .project-card {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 16px;
-            transition: box-shadow 0.2s;
+        /* ── Education ── */
+        .edu-item {
+            margin-bottom: 24px;
+            padding-left: 20px;
+            border-left: 3px solid #d5cfc4;
         }
 
-        .project-card:hover {
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        .edu-item h3 {
+            font-size: 1.02em; color: #1b1b2f; margin-bottom: 2px;
         }
 
-        .project-card h3 {
-            font-size: 1.15em;
-            color: #1a2a3a;
-            margin-bottom: 8px;
+        .edu-inst {
+            font-size: 0.92em; color: #666; margin-bottom: 4px;
         }
 
-        .project-card p {
-            font-size: 0.95em;
-            color: #555;
-            margin-bottom: 12px;
+        .edu-detail {
+            font-size: 0.88em; color: #777; line-height: 1.6;
         }
 
-        .project-links {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .project-links a {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.82em;
-            background: #f0f4f8;
-            padding: 4px 12px;
-            border-radius: 4px;
-            color: #1a5276;
-        }
-
-        /* --- Publications --- */
-        .pub-item {
-            margin-bottom: 22px;
-            padding-left: 18px;
-            border-left: 3px solid #d0dce5;
-        }
-
-        .pub-item .pub-title {
-            font-weight: 700;
-            color: #1a2a3a;
-            margin-bottom: 3px;
-        }
-
-        .pub-item .pub-authors {
-            font-size: 0.92em;
-            color: #555;
-        }
-
-        .pub-item .pub-venue {
-            font-size: 0.88em;
-            color: #777;
-            font-style: italic;
-            margin-top: 2px;
-        }
-
-        .pub-item .pub-links {
-            margin-top: 6px;
-            display: flex;
-            gap: 10px;
-        }
-
-        .pub-item .pub-links a {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.8em;
-            background: #f0f4f8;
-            padding: 3px 10px;
-            border-radius: 4px;
-        }
-
-        .pub-year {
-            font-size: 1.1em;
-            font-weight: 700;
-            color: #1a5276;
-            margin: 28px 0 14px 0;
-        }
-
-        .pub-year:first-child { margin-top: 0; }
-
-        /* --- Software / Repos --- */
-        .repo-card {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 20px 24px;
-            margin-bottom: 12px;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .repo-card h3 {
-            font-size: 1.05em;
-            color: #1a5276;
-            font-family: 'Courier New', monospace;
-        }
-
-        .repo-card p {
-            font-size: 0.9em;
-            color: #555;
-            margin-top: 4px;
-        }
-
-        .repo-card .repo-meta {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.8em;
-            color: #888;
-            white-space: nowrap;
-        }
-
-        /* --- CV --- */
-        .cv-section p {
-            margin-bottom: 16px;
-        }
-
-        .cv-download {
-            display: inline-block;
-            background: #1a5276;
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.9em;
-            transition: background 0.2s;
-        }
-
-        .cv-download:hover {
-            background: #1a3a5a;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        /* --- Contact --- */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
-        }
-
-        .contact-item {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 18px;
-        }
-
-        .contact-item .label {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.75em;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #888;
-            margin-bottom: 4px;
-        }
-
-        .contact-item .value {
-            font-size: 0.95em;
-            color: #1a5276;
-        }
-
-        /* --- News --- */
+        /* ── News ── */
         .news-item {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 16px;
-            align-items: baseline;
+            display: flex; gap: 18px; margin-bottom: 14px; align-items: baseline;
         }
 
         .news-date {
-            font-family: 'Courier New', monospace;
-            font-size: 0.85em;
-            color: #888;
-            white-space: nowrap;
-            min-width: 90px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82em; color: #999;
+            white-space: nowrap; min-width: 85px; font-weight: 500;
         }
 
-        .news-text {
-            font-size: 0.95em;
+        .news-text { font-size: 0.94em; }
+
+        /* ── Projects ── */
+        .proj {
+            background: #fff; border: 1px solid #e4e0d8;
+            border-radius: 10px; padding: 26px; margin-bottom: 16px;
+            transition: box-shadow 0.2s;
         }
 
-        /* --- Footer --- */
+        .proj:hover { box-shadow: 0 3px 16px rgba(0,0,0,0.06); }
+
+        .proj h3 { font-size: 1.06em; color: #1b1b2f; margin-bottom: 8px; }
+        .proj p { font-size: 0.93em; color: #555; margin-bottom: 12px; }
+
+        .proj-links {
+            display: flex; gap: 10px; flex-wrap: wrap;
+        }
+
+        .proj-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78em; font-weight: 500;
+            background: #f3efe7; padding: 4px 12px;
+            border-radius: 4px; color: #8b1a1a;
+        }
+
+        /* ── Publications ── */
+        .pub-year {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05em; font-weight: 700;
+            color: #8b1a1a; margin: 30px 0 14px;
+        }
+
+        .pub-year:first-of-type { margin-top: 0; }
+
+        .pub {
+            margin-bottom: 20px; padding-left: 18px;
+            border-left: 3px solid #d5cfc4;
+        }
+
+        .pub-title { font-weight: 600; color: #1b1b2f; margin-bottom: 3px; font-size: 0.97em; }
+
+        .pub-authors { font-size: 0.88em; color: #666; }
+        .pub-authors strong { color: #2a2a2a; }
+
+        .pub-venue { font-size: 0.85em; color: #888; font-style: italic; margin-top: 2px; }
+
+        .pub-links {
+            margin-top: 6px; display: flex; gap: 8px;
+        }
+
+        .pub-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.76em; font-weight: 500;
+            background: #f3efe7; padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .pub-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82em; font-weight: 600;
+            color: #555; margin: 24px 0 12px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* ── Skills ── */
+        .skill-group { margin-bottom: 18px; }
+
+        .skill-group h3 {
+            font-size: 0.85em; font-weight: 600;
+            color: #8b1a1a; margin-bottom: 6px;
+            text-transform: uppercase; letter-spacing: 0.4px;
+        }
+
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+        .skill-tag {
+            font-family: 'Inter', sans-serif;
+            background: #fff; border: 1px solid #e0dbd2;
+            padding: 4px 12px; border-radius: 4px;
+            font-size: 0.8em; color: #555;
+        }
+
+        /* ── Awards ── */
+        .award-item {
+            display: flex; gap: 16px; margin-bottom: 12px; align-items: baseline;
+        }
+
+        .award-year {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82em; color: #999;
+            min-width: 50px; font-weight: 500;
+        }
+
+        .award-text { font-size: 0.93em; }
+        .award-org { font-size: 0.85em; color: #888; }
+
+        /* ── Experience ── */
+        .exp-item { margin-bottom: 26px; padding-left: 20px; border-left: 3px solid #d5cfc4; }
+        .exp-item h3 { font-size: 1em; color: #1b1b2f; margin-bottom: 2px; }
+        .exp-meta { font-size: 0.88em; color: #888; margin-bottom: 8px; }
+        .exp-item ul { padding-left: 20px; }
+        .exp-item li { font-size: 0.92em; color: #555; margin-bottom: 6px; }
+
+        /* ── Contact ── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+
+        .contact-card {
+            background: #fff; border: 1px solid #e4e0d8;
+            border-radius: 8px; padding: 18px;
+        }
+
+        .contact-card .lbl {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72em; text-transform: uppercase;
+            letter-spacing: 0.8px; color: #999; margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .contact-card .val { font-size: 0.93em; color: #8b1a1a; }
+
+        /* ── Footer ── */
         .footer {
-            text-align: center;
-            padding: 30px 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 0.8em;
-            color: #999;
-            border-top: 1px solid #e8e8e8;
+            text-align: center; padding: 32px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78em; color: #b0a89c;
+            border-top: 1px solid #e4e0d8;
         }
 
-        /* --- Responsive --- */
+        /* ── Responsive ── */
         @media (max-width: 600px) {
-            .header { padding: 40px 20px; }
-            .header h1 { font-size: 1.7em; }
-            .nav a { padding: 10px 10px; font-size: 0.78em; }
-            section { padding: 35px 0; }
-            .news-item { flex-direction: column; gap: 2px; }
-            .news-date { min-width: auto; }
+            .header { padding: 44px 20px 40px; }
+            .header h1 { font-size: 1.75em; }
+            .nav a { padding: 10px 8px; font-size: 0.72em; }
+            section { padding: 36px 0; }
+            .news-item, .award-item { flex-direction: column; gap: 2px; }
+            .news-date, .award-year { min-width: auto; }
         }
     </style>
 </head>
 <body>
 
-<!-- ===================== HEADER ===================== -->
-<div class="header">
+<!-- ════════════════ HEADER ════════════════ -->
+<header class="header">
     <div class="header-inner">
-        <div class="profile-photo">👤</div>
-        <!-- EDIT: Replace with <img src="photo.jpg" class="profile-photo" alt="Your Name"> -->
-        <h1>Your Name</h1>
-        <!-- EDIT: Your name above -->
-        <div class="subtitle">PhD Candidate / Postdoc / Assistant Professor</div>
-        <!-- EDIT: Your title above -->
-        <div class="affiliation">Department of Materials Science &amp; Engineering, Your University</div>
-        <!-- EDIT: Your affiliation above -->
-        <div class="header-links">
-            <a href="mailto:you@university.edu">✉ Email</a>
-            <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">🎓 Google Scholar</a>
+        <div class="avatar">👤</div>
+        <!-- TO ADD YOUR PHOTO: Upload photo.jpg to the repo, then replace the div above with:
+             <img src="photo.jpg" class="avatar" alt="Md. Aminul Islam" style="object-fit:cover;"> -->
+        <h1>Md. Aminul Islam</h1>
+        <div class="role">M.S. Candidate · Materials Science &amp; Engineering</div>
+        <div class="affil">Tuskegee University · Alabama, USA</div>
+        <div class="hdr-links">
+            <a href="mailto:aislam5107@tuskegee.edu">✉ Email</a>
+            <a href="#" target="_blank">🎓 Google Scholar</a>
+            <!-- EDIT: Replace # with your Google Scholar URL -->
             <a href="https://github.com/aminulislam1992" target="_blank">💻 GitHub</a>
-            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">🆔 ORCID</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">🔗 LinkedIn</a>
+            <a href="#" target="_blank">🆔 ORCID</a>
+            <!-- EDIT: Replace # with your ORCID URL -->
+            <a href="#" target="_blank">🔗 LinkedIn</a>
+            <!-- EDIT: Replace # with your LinkedIn URL -->
         </div>
-        <!-- EDIT: Replace all links above with your actual profile URLs -->
     </div>
-</div>
+</header>
 
-<!-- ===================== NAVIGATION ===================== -->
+<!-- ════════════════ NAVIGATION ════════════════ -->
 <nav class="nav">
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
-        <li><a href="#software">Software</a></li>
-        <li><a href="#cv">CV</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<div class="container">
+<div class="wrap">
 
-<!-- ===================== ABOUT ===================== -->
+<!-- ════════════════ ABOUT ════════════════ -->
 <section id="about" class="about">
     <h2>About Me</h2>
     <p>
-        <!-- EDIT: Write 2-3 sentences about yourself -->
-        I am a [title] at [University/Lab], working at the intersection of materials science and machine learning.
-        My research focuses on developing data-driven approaches to accelerate the discovery and design of advanced materials.
+        I am a graduate research assistant at <strong>Tuskegee University</strong>, pursuing an M.S. in Materials Science
+        and Engineering under the supervision of <strong>Dr. Walter Malone</strong>. My research is funded by the
+        <strong>NSF DMREF Award #2324157</strong>, a collaborative project focused on the computationally driven
+        discovery and synthesis of 2D materials through selective etching.
     </p>
     <p>
-        <!-- EDIT: Add more detail about your research focus -->
-        I am particularly interested in applying deep learning, graph neural networks, and generative models
-        to predict material properties, explore vast compositional spaces, and guide experimental synthesis.
-        My goal is to bridge the gap between computational predictions and experimental validation.
+        My work sits at the intersection of <strong>machine learning</strong> and <strong>computational materials science</strong>.
+        I use universal machine-learned interatomic potentials (UMA, MACE) coupled with high-throughput screening
+        workflows to accelerate the discovery of new MXenes and 2D materials — achieving predictions that are
+        10⁴–10⁶× faster than traditional DFT while maintaining chemical accuracy.
+    </p>
+    <p>
+        Prior to graduate school, I spent over six years in industry at Walton Hi-Tech Industries PLC in Bangladesh,
+        where I worked as a Product Design Manager and filed a patent for an antimicrobial freezer liner.
     </p>
 
-    <h3 style="font-size: 1em; margin-top: 24px; margin-bottom: 12px; color: #555;">Research Interests</h3>
-    <div class="research-interests">
-        <!-- EDIT: Change these tags to match your interests -->
-        <span class="tag">Machine Learning for Materials</span>
-        <span class="tag">Materials Informatics</span>
-        <span class="tag">Graph Neural Networks</span>
-        <span class="tag">Crystal Structure Prediction</span>
-        <span class="tag">High-Throughput Screening</span>
-        <span class="tag">DFT</span>
-        <span class="tag">Generative Models</span>
+    <h3 class="sans" style="font-size:0.88em; margin-top:24px; margin-bottom:12px; color:#777; text-transform:uppercase; letter-spacing:0.5px; font-weight:600;">Research Interests</h3>
+    <div class="interests">
+        <span class="tag">2D Materials</span>
+        <span class="tag">MXenes</span>
+        <span class="tag">Computational Materials</span>
+        <span class="tag">Atomistic Simulation</span>
+        <span class="tag">Machine Learning</span>
         <span class="tag">Materials Discovery</span>
+        <span class="tag">High-Throughput Screening</span>
+        <span class="tag">uMLIPs</span>
     </div>
 </section>
 
-<!-- ===================== NEWS ===================== -->
+<!-- ════════════════ EDUCATION ════════════════ -->
+<section id="education">
+    <h2>Education</h2>
+
+    <div class="edu-item">
+        <h3>M.S. Materials Science and Engineering</h3>
+        <div class="edu-inst">Tuskegee University · Aug 2025 – Jul 2027 (Expected) · GPA: 4.00/4.00</div>
+        <div class="edu-detail">
+            Thesis: <em>Accelerating the Design and Discovery of 2D Materials Using Machine Learning Based Atomistic Modeling</em><br>
+            Advisor: Dr. Walter Malone · Funded by NSF DMREF Award #2324157
+        </div>
+    </div>
+
+    <div class="edu-item">
+        <h3>B.S. Mechanical Engineering</h3>
+        <div class="edu-inst">IUBAT — International University of Business Agriculture and Technology · Jan 2011 – Dec 2014 · GPA: 3.62/4.00</div>
+    </div>
+
+    <div class="edu-item">
+        <h3>GRE General Test</h3>
+        <div class="edu-inst">336/340 (Verbal: 169, Quant: 167, Analytical Writing: 5.0) · Valid through Sep 2029</div>
+    </div>
+</section>
+
+<!-- ════════════════ NEWS ════════════════ -->
 <section id="news">
     <h2>News</h2>
-    <!-- EDIT: Add your latest updates -->
     <div class="news-item">
-        <span class="news-date">Oct 2026</span>
-        <span class="news-text">Our paper on [topic] was accepted at <strong>[Journal/Conference]</strong>!</span>
+        <span class="news-date">Nov 2026</span>
+        <span class="news-text">Joined <strong>TMS — The Minerals, Metals &amp; Materials Society</strong> as a professional member.</span>
     </div>
     <div class="news-item">
-        <span class="news-date">Sep 2026</span>
-        <span class="news-text">Presented a talk on [topic] at [Conference Name].</span>
+        <span class="news-date">Apr 2026</span>
+        <span class="news-text"><strong>Top 5 Best Presentation Finalist</strong> at the 11th Joint Annual Research Symposium (JARS), Tuskegee University.</span>
     </div>
     <div class="news-item">
-        <span class="news-date">Jun 2026</span>
-        <span class="news-text">Released <a href="#">[tool/dataset name]</a> — an open-source tool for [purpose].</span>
+        <span class="news-date">Mar 2026</span>
+        <span class="news-text"><strong>Top 3 Best Presentation Finalist</strong> at the ACS EAWG Local Section Symposium, Auburn University.</span>
     </div>
     <div class="news-item">
-        <span class="news-date">Jan 2026</span>
-        <span class="news-text">Started my [position] at [University/Lab].</span>
+        <span class="news-date">Aug 2025</span>
+        <span class="news-text">Started M.S. at Tuskegee University with full NSF DMREF funding.</span>
     </div>
 </section>
 
-<!-- ===================== FEATURED RESEARCH ===================== -->
+<!-- ════════════════ RESEARCH ════════════════ -->
 <section id="research">
     <h2>Featured Research</h2>
 
-    <!-- EDIT: Replace with your actual projects -->
-    <div class="project-card">
-        <h3>ML-Guided Discovery of Novel Thermoelectric Materials</h3>
+    <div class="proj">
+        <h3>High-Throughput Screening of MAX Phase Exfoliation Energies</h3>
         <p>
-            Developed a graph neural network model to predict thermoelectric figure of merit (ZT)
-            across thousands of candidate compositions. Identified 12 promising materials,
-            3 of which were experimentally validated with ZT &gt; 1.5.
+            Built an ASE workflow using UMA and MACE universal potentials to screen 243 M₂AX, M₃AX₂, and M₄AX₃
+            carbide and nitride compositions — predicting exfoliation energies, surface terminations, vacancy
+            formation energies, and formation enthalpies at 10⁴–10⁶× the speed of DFT.
         </p>
-        <div class="project-links">
-            <a href="#">📄 Paper</a>
-            <a href="#">💻 Code</a>
-            <a href="#">📊 Dataset</a>
+        <div class="proj-links">
+            <a href="#">Paper (In Prep)</a>
+            <a href="#">Code</a>
+            <!-- EDIT: Add links when available -->
         </div>
     </div>
 
-    <div class="project-card">
-        <h3>Generative Models for Crystal Structure Prediction</h3>
+    <div class="proj">
+        <h3>Oxidation-Driven Selectivity in MAX Phase Etching</h3>
         <p>
-            Applied variational autoencoders and diffusion models to generate
-            novel crystal structures with targeted properties. The model achieves
-            state-of-the-art performance on the Materials Project benchmark.
+            Collaborative study with Dr. Klyukin's group applying high-throughput uMLIP screening of
+            162 carbide compositions to understand oxidation-driven selectivity in MAX phase etching for MXene synthesis.
         </p>
-        <div class="project-links">
-            <a href="#">📄 Paper</a>
-            <a href="#">💻 Code</a>
+        <div class="proj-links">
+            <a href="#">Paper (In Prep)</a>
         </div>
     </div>
 
-    <div class="project-card">
-        <h3>Transfer Learning for Small Materials Datasets</h3>
+    <div class="proj">
+        <h3>Etching-Aware ML Framework for MXene Bandgap Prediction</h3>
         <p>
-            Proposed a transfer learning framework that pre-trains on large DFT datasets
-            and fine-tunes on small experimental datasets, improving prediction accuracy
-            by 40% on band gap estimation tasks.
+            Developing a physics-informed machine learning framework that incorporates DOS fingerprinting,
+            delta-learning, and termination sensitivity mapping for accurate MXene bandgap prediction.
         </p>
-        <div class="project-links">
-            <a href="#">📄 Preprint</a>
-            <a href="#">💻 Code</a>
+        <div class="proj-links">
+            <a href="#">Paper (In Prep)</a>
+        </div>
+    </div>
+
+    <div class="proj">
+        <h3>Stable MXene Surface Termination Search</h3>
+        <p>
+            Using Monte Carlo and genetic algorithms with uMLIP energies to explore stable MXene surface
+            terminations, with lowest-energy candidates validated by Quantum ESPRESSO DFT for
+            energy storage, electronics, and catalysis applications.
+        </p>
+        <div class="proj-links">
+            <a href="#">Code</a>
+            <!-- EDIT: Add links when available -->
         </div>
     </div>
 </section>
 
-<!-- ===================== PUBLICATIONS ===================== -->
+<!-- ════════════════ PUBLICATIONS ════════════════ -->
 <section id="publications">
     <h2>Publications</h2>
 
-    <!-- EDIT: Replace with your real publications -->
+    <div class="pub-sub">Manuscripts in Preparation</div>
+
+    <div class="pub">
+        <div class="pub-title">Oxidation-Driven Selectivity in MAX Phase Etching: A High-Throughput uMLIP Screening of 162 Carbide Compositions for MXene Synthesis</div>
+        <div class="pub-authors">V. Nesterova, <strong>M. A. Islam</strong>, W. Malone, &amp; K. Klyukin</div>
+        <div class="pub-venue">In Preparation, 2026</div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-title">Etching Aware Machine Learning Framework for MXene Bandgap Prediction: Physics-Informed DOS Fingerprinting, Delta-Learning, and Termination Sensitivity Mapping</div>
+        <div class="pub-authors"><strong>M. A. Islam</strong> &amp; N. Hossain</div>
+        <div class="pub-venue">In Preparation, 2026</div>
+    </div>
+
+    <div class="pub-sub">Conference Presentations</div>
+
+    <div class="pub">
+        <div class="pub-title">High-Throughput Screening of MAX Phase M₂AX Exfoliation Energies Using Foundational Atomistic Models</div>
+        <div class="pub-authors"><strong>M. A. Islam</strong> &amp; W. Malone</div>
+        <div class="pub-venue">Joint Annual Research Symposium (JARS), Apr 2026 — Top 5 Best Presentation Finalist</div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-title">Benchmarking Foundational Models for High-Throughput Exfoliation-Energy Screening of MAX Phases M₃AX₂</div>
+        <div class="pub-authors"><strong>M. A. Islam</strong> &amp; W. Malone</div>
+        <div class="pub-venue">ACS EAWG Local Section Symposium, Mar 2026 — Top 3 Best Presentation Finalist</div>
+    </div>
+
+    <div class="pub-sub">Peer-Reviewed Journal Articles</div>
+
     <div class="pub-year">2026</div>
 
-    <div class="pub-item">
-        <div class="pub-title">Title of Your Most Recent Paper</div>
-        <div class="pub-authors"><strong>Your Name</strong>, Coauthor A, Coauthor B, Coauthor C</div>
-        <div class="pub-venue">Nature Computational Science, 2026</div>
+    <div class="pub">
+        <div class="pub-title">Selective etching of 2D materials for quantum computing devices: A computational perspective</div>
+        <div class="pub-authors"><strong>M. A. Islam</strong>, S. Khan, N. Hossain, A. A. Alif, S. Jannat, M. F. Akter, M. Farzana, &amp; J. F. Shorna</div>
+        <div class="pub-venue">Next Nanotechnology, 2026</div>
         <div class="pub-links">
             <a href="#">DOI</a>
-            <a href="#">arXiv</a>
-            <a href="#">Code</a>
+            <!-- EDIT: Add real DOI link -->
         </div>
     </div>
 
-    <div class="pub-item">
-        <div class="pub-title">Another Paper Title Goes Here</div>
-        <div class="pub-authors">Coauthor A, <strong>Your Name</strong>, Coauthor B</div>
-        <div class="pub-venue">Chemistry of Materials, 2026</div>
+    <div class="pub">
+        <div class="pub-title">Green synthesis and characterisation of nano-scaled ZrO₂ via Citrus limon and Cinnamomum tamala extracts for antibacterial application</div>
+        <div class="pub-authors">N. Hossain, M. R. Islam, J. J. Mim, S. Islam, &amp; <strong>M. A. Islam</strong></div>
+        <div class="pub-venue">Next Nanotechnology, 2026</div>
         <div class="pub-links">
             <a href="#">DOI</a>
-            <a href="#">PDF</a>
         </div>
     </div>
 
     <div class="pub-year">2025</div>
 
-    <div class="pub-item">
-        <div class="pub-title">An Older Paper Title</div>
-        <div class="pub-authors"><strong>Your Name</strong>, Coauthor D, Coauthor E</div>
-        <div class="pub-venue">npj Computational Materials, 2025</div>
-        <div class="pub-links">
-            <a href="#">DOI</a>
-            <a href="#">arXiv</a>
-            <a href="#">Code</a>
-            <a href="#">Dataset</a>
-        </div>
-    </div>
-
-    <div class="pub-item">
-        <div class="pub-title">Yet Another Paper Title</div>
-        <div class="pub-authors">Coauthor F, <strong>Your Name</strong>, Coauthor G</div>
-        <div class="pub-venue">Physical Review Materials, 2025</div>
+    <div class="pub">
+        <div class="pub-title">DFT insights into the mechanical properties of nanomaterials</div>
+        <div class="pub-authors"><strong>M. A. Islam</strong>, N. Hossain, Z. Ahsan, M. Rana, M. Rahman, &amp; M. Abdullah</div>
+        <div class="pub-venue">Results in Surfaces and Interfaces, 2025</div>
         <div class="pub-links">
             <a href="#">DOI</a>
         </div>
     </div>
 
-    <p style="margin-top: 24px; font-size: 0.9em; color: #777;">
-        → Full list on <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a>
-        <!-- EDIT: Add your Google Scholar link -->
+    <div class="pub">
+        <div class="pub-title">Prospects and challenges of MXenes — a review</div>
+        <div class="pub-authors">S. M. M. Rahman, M. S. Oliullah, M. R. Arup, Z. Hasan, <strong>M. A. Islam</strong>, J. J. Mim, &amp; N. Hossain</div>
+        <div class="pub-venue">Inorganic Chemistry Communications, 2025</div>
+        <div class="pub-links">
+            <a href="#">DOI</a>
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-title">Recent advances of 2D materials in semiconductor application: A review</div>
+        <div class="pub-authors"><strong>M. A. Islam</strong>, S. Khan, J. J. Mim, S. Rahman, M. I. Patwary, M. Islam, &amp; N. Hossain</div>
+        <div class="pub-venue">Advanced Sensor and Energy Materials, 2025</div>
+        <div class="pub-links">
+            <a href="#">DOI</a>
+        </div>
+    </div>
+
+    <div class="pub-year">2024</div>
+
+    <div class="pub">
+        <div class="pub-title">Experimental characterization of defect-induced Raman spectroscopy in graphene with BN, ZnO, Al₂O₃ and TiO₂ dopants</div>
+        <div class="pub-authors">R. Nandee, M. A. Chowdhury, N. Hossain, <strong>M. A. Islam</strong>, &amp; H. Aoyon</div>
+        <div class="pub-venue">Results in Engineering, 2024</div>
+        <div class="pub-links">
+            <a href="#">DOI</a>
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-title">Analysis of semiconductor properties of fabricated graphene materials</div>
+        <div class="pub-authors">R. Nandee, M. A. Chowdhury, M. M. Rana, N. Hossain, <strong>M. A. Islam</strong>, &amp; H. Aoyon</div>
+        <div class="pub-venue">Nano-Structures &amp; Nano-Objects, 2024</div>
+        <div class="pub-links">
+            <a href="#">DOI</a>
+        </div>
+    </div>
+
+    <div class="pub-year">2023</div>
+
+    <div class="pub">
+        <div class="pub-title">Green synthesis of novel green ceramic-based nanoparticles prepared by sol-gel technique for industrial application</div>
+        <div class="pub-authors">M. A. Chowdhury, M. Iqbal, M. M. Rana, N. Hossain, <strong>M. A. Islam</strong>, &amp; M. M. Rahman</div>
+        <div class="pub-venue">Results in Surfaces and Interfaces, 2023</div>
+        <div class="pub-links">
+            <a href="#">DOI</a>
+        </div>
+    </div>
+
+    <p style="margin-top:28px; font-size:0.9em; color:#888;">
+        → Full list on <a href="#">Google Scholar</a>
+        <!-- EDIT: Replace # with your Google Scholar URL -->
     </p>
 </section>
 
-<!-- ===================== SOFTWARE ===================== -->
-<section id="software">
-    <h2>Software &amp; Datasets</h2>
+<!-- ════════════════ SKILLS ════════════════ -->
+<section id="skills">
+    <h2>Technical Skills</h2>
 
-    <!-- EDIT: Replace with your actual repos -->
-    <div class="repo-card">
-        <div>
-            <h3><a href="https://github.com/aminulislam1992/your-repo">your-repo-name</a></h3>
-            <p>A brief description of what this tool does — e.g., "Graph neural network for predicting formation energies of inorganic crystals."</p>
+    <div class="skill-group">
+        <h3>Computational</h3>
+        <div class="skill-tags">
+            <span class="skill-tag">UMA</span>
+            <span class="skill-tag">MACE</span>
+            <span class="skill-tag">Quantum ESPRESSO</span>
+            <span class="skill-tag">ASE</span>
+            <span class="skill-tag">VESTA</span>
+            <span class="skill-tag">Monte Carlo</span>
+            <span class="skill-tag">Genetic Algorithms</span>
         </div>
-        <div class="repo-meta">Python</div>
     </div>
 
-    <div class="repo-card">
-        <div>
-            <h3><a href="https://github.com/aminulislam1992/another-repo">another-repo-name</a></h3>
-            <p>Another tool description — e.g., "Dataset and benchmarks for ML-driven thermoelectric screening."</p>
+    <div class="skill-group">
+        <h3>Programming</h3>
+        <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">SciPy</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">HPC Cluster</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">OriginLab</span>
         </div>
-        <div class="repo-meta">Python</div>
     </div>
 
-    <div class="repo-card">
-        <div>
-            <h3><a href="https://github.com/aminulislam1992/third-repo">third-repo-name</a></h3>
-            <p>A third tool — e.g., "Automated DFT workflow for high-throughput materials calculations."</p>
+    <div class="skill-group">
+        <h3>Characterization</h3>
+        <div class="skill-tags">
+            <span class="skill-tag">XRD</span>
+            <span class="skill-tag">SEM</span>
+            <span class="skill-tag">TEM</span>
+            <span class="skill-tag">EDS</span>
+            <span class="skill-tag">XPS</span>
+            <span class="skill-tag">Raman Spectroscopy</span>
+            <span class="skill-tag">DSC</span>
+            <span class="skill-tag">TGA</span>
+            <span class="skill-tag">DMA</span>
+            <span class="skill-tag">TMA</span>
         </div>
-        <div class="repo-meta">Python</div>
+    </div>
+
+    <div class="skill-group">
+        <h3>Simulation &amp; CAD</h3>
+        <div class="skill-tags">
+            <span class="skill-tag">COMSOL Multiphysics</span>
+            <span class="skill-tag">ANSYS</span>
+            <span class="skill-tag">SolidWorks</span>
+            <span class="skill-tag">AutoCAD</span>
+        </div>
+    </div>
+
+    <div class="skill-group">
+        <h3>Manufacturing</h3>
+        <div class="skill-tags">
+            <span class="skill-tag">SLA/FDM 3D Printing</span>
+            <span class="skill-tag">CNC Machining</span>
+            <span class="skill-tag">Milling</span>
+            <span class="skill-tag">Prototype Fabrication</span>
+        </div>
     </div>
 </section>
 
-<!-- ===================== CV ===================== -->
-<section id="cv" class="cv-section">
-    <h2>Curriculum Vitae</h2>
-    <p>
-        A summary of my academic background, research experience, and teaching.
-    </p>
-    <!-- EDIT: Upload your CV as a PDF and update the link below -->
-    <a href="cv.pdf" class="cv-download" target="_blank">📄 Download CV (PDF)</a>
+<!-- ════════════════ AWARDS ════════════════ -->
+<section id="awards">
+    <h2>Awards &amp; Honors</h2>
+
+    <div class="award-item">
+        <span class="award-year">2026</span>
+        <div>
+            <div class="award-text">Eminent Scholar Award (Fall 2025 &amp; Spring 2026)</div>
+            <div class="award-org">Tuskegee University</div>
+        </div>
+    </div>
+    <div class="award-item">
+        <span class="award-year">2026</span>
+        <div>
+            <div class="award-text">Top 5 Best Presentation Finalist — 11th Joint Annual Research Symposium</div>
+            <div class="award-org">Tuskegee University</div>
+        </div>
+    </div>
+    <div class="award-item">
+        <span class="award-year">2026</span>
+        <div>
+            <div class="award-text">Top 3 Best Presentation Finalist — ACS EAWG Local Section Symposium</div>
+            <div class="award-org">Auburn University</div>
+        </div>
+    </div>
+    <div class="award-item">
+        <span class="award-year">2023</span>
+        <div>
+            <div class="award-text">Best Design of the Month Award (Refrigerator R&amp;I)</div>
+            <div class="award-org">Walton Hi-Tech Industries PLC</div>
+        </div>
+    </div>
+    <div class="award-item">
+        <span class="award-year">2012</span>
+        <div>
+            <div class="award-text">Dean's List Award</div>
+            <div class="award-org">IUBAT</div>
+        </div>
+    </div>
+    <div class="award-item">
+        <span class="award-year">2011</span>
+        <div>
+            <div class="award-text">Undergraduate Merit Scholarship — 100% Tuition Fee Waiver</div>
+            <div class="award-org">IUBAT</div>
+        </div>
+    </div>
 </section>
 
-<!-- ===================== CONTACT ===================== -->
+<!-- ════════════════ EXPERIENCE ════════════════ -->
+<section id="experience">
+    <h2>Experience</h2>
+
+    <div class="exp-item">
+        <h3>Graduate Research Assistant</h3>
+        <div class="exp-meta">Tuskegee University · PI: Dr. Walter Malone · Aug 2025 – Present</div>
+        <ul>
+            <li>High-throughput screening of 243 MAX phase compositions using UMA and MACE potentials.</li>
+            <li>Benchmarked uMLIP models against DFT, achieving MAE of 0.11–0.17 J/m² for carbides (UMA) and 0.22–0.29 J/m² for nitrides (MACE).</li>
+            <li>Searching for stable MXene surface terminations using Monte Carlo and genetic algorithms.</li>
+            <li>Collaborating with research groups of Dr. Mochalin, Dr. Beidaghi, and Dr. Klyukin.</li>
+        </ul>
+    </div>
+
+    <div class="exp-item">
+        <h3>Product Design Manager &amp; Researcher</h3>
+        <div class="exp-meta">Walton Hi-Tech Industries PLC · Jan 2019 – Jul 2025 · Gazipur, Bangladesh</div>
+        <ul>
+            <li>Developed an antimicrobial freezer liner from thermoformed HIPS composite with nano-silver additives; filed a Bangladesh patent (2025).</li>
+            <li>Led insulation design for a 210 L freezer achieving 60% energy reduction, adding ~$0.6M in annual profit.</li>
+        </ul>
+    </div>
+
+    <div class="exp-item">
+        <h3>Assistant Design Engineer</h3>
+        <div class="exp-meta">Adex Engineering Ltd. · Jan 2015 – Dec 2018 · Tejgaon, Bangladesh</div>
+        <ul>
+            <li>Designed transformers, prepared manufacturing drawings, and supported assembly and waste-reduction initiatives.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ════════════════ SERVICE ════════════════ -->
+<section id="service">
+    <h2>Service &amp; Leadership</h2>
+
+    <div class="news-item">
+        <span class="news-date">2026</span>
+        <span class="news-text">Graduate Mentor, NSF-funded REU Summer Program, Tuskegee University</span>
+    </div>
+    <div class="news-item">
+        <span class="news-date">2026–</span>
+        <span class="news-text">Peer Reviewer: <em>Journal of Power Sources</em>, <em>Ceramics International</em>, <em>Applied Thermal Engineering</em></span>
+    </div>
+    <div class="news-item">
+        <span class="news-date">2026–</span>
+        <span class="news-text">Professional Member, TMS — The Minerals, Metals &amp; Materials Society</span>
+    </div>
+    <div class="news-item">
+        <span class="news-date">2025–26</span>
+        <span class="news-text">International Student Representative, Graduate Student Association, Tuskegee University</span>
+    </div>
+    <div class="news-item">
+        <span class="news-date">2025–</span>
+        <span class="news-text">Volunteer, Helping Hand Food Ministry, Community Food Distribution, Macon County</span>
+    </div>
+    <div class="news-item">
+        <span class="news-date">2013–14</span>
+        <span class="news-text">Teaching Assistant, Mechanics of Solids, IUBAT</span>
+    </div>
+</section>
+
+<!-- ════════════════ CONTACT ════════════════ -->
 <section id="contact">
     <h2>Contact</h2>
     <div class="contact-grid">
-        <div class="contact-item">
-            <div class="label">Email</div>
-            <div class="value"><a href="mailto:you@university.edu">you@university.edu</a></div>
-            <!-- EDIT: Your email -->
+        <div class="contact-card">
+            <div class="lbl">Email</div>
+            <div class="val"><a href="mailto:aislam5107@tuskegee.edu">aislam5107@tuskegee.edu</a></div>
         </div>
-        <div class="contact-item">
-            <div class="label">Office</div>
-            <div class="value">Room 123, Materials Science Building<br>Your University</div>
-            <!-- EDIT: Your office location -->
+        <div class="contact-card">
+            <div class="lbl">Institution</div>
+            <div class="val" style="color:#555;">Department of Materials Science &amp; Engineering<br>Tuskegee University, Tuskegee, AL</div>
         </div>
-        <div class="contact-item">
-            <div class="label">Google Scholar</div>
-            <div class="value"><a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Profile</a></div>
-            <!-- EDIT: Your Scholar URL -->
+        <div class="contact-card">
+            <div class="lbl">Google Scholar</div>
+            <div class="val"><a href="#" target="_blank">Profile</a></div>
+            <!-- EDIT: Replace # with your URL -->
         </div>
-        <div class="contact-item">
-            <div class="label">GitHub</div>
-            <div class="value"><a href="https://github.com/aminulislam1992" target="_blank">aminulislam1992</a></div>
+        <div class="contact-card">
+            <div class="lbl">GitHub</div>
+            <div class="val"><a href="https://github.com/aminulislam1992" target="_blank">aminulislam1992</a></div>
+        </div>
+        <div class="contact-card">
+            <div class="lbl">ORCID</div>
+            <div class="val"><a href="#" target="_blank">Profile</a></div>
+            <!-- EDIT: Replace # with your ORCID URL -->
+        </div>
+        <div class="contact-card">
+            <div class="lbl">LinkedIn</div>
+            <div class="val"><a href="#" target="_blank">Profile</a></div>
+            <!-- EDIT: Replace # with your LinkedIn URL -->
         </div>
     </div>
 </section>
 
 </div>
 
-<!-- ===================== FOOTER ===================== -->
-<div class="footer">
-    &copy; 2026 Your Name. Hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
-    <!-- EDIT: Your name above -->
-</div>
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="footer">
+    &copy; 2026 Md. Aminul Islam · Hosted on <a href="https://pages.github.com/">GitHub Pages</a>
+</footer>
 
 </body>
 </html>
